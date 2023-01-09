@@ -1,0 +1,12 @@
+{
+    "env": {
+        "name": "dev"
+    },
+    "apiServer": {
+        "productService"        : "https://api.symplified.it/product-service/v1",
+        "orderService"          : "https://api.symplified.it/order-service/v1"
+    },
+    "marketplaceDomain"         : "dev-my.symplified.ai",
+    "dineInDomain"              : "dev-my2.symplified.ai",
+    "logging": 0
+}
