@@ -1,7 +1,7 @@
 {
-    "name": "fuse-angular",
-    "version": "17.0.1",
-    "description": "Fuse - Angular Admin Template and Starter Project",
+    "name": "payment-redirect",
+    "version": "1.0.0",
+    "description": "Payment Redirect",
     "author": "https://themeforest.net/user/srcn",
     "license": "https://themeforest.net/licenses/standard",
     "private": true,
