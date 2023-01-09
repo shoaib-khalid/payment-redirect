@@ -2,7 +2,7 @@ import { Route } from '@angular/router';
 import { AuthGuard } from 'app/core/auth/guards/auth.guard';
 import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
 import { LayoutComponent } from 'app/layout/layout.component';
-import { InitialDataResolver } from 'app/app.resolvers';
+import { BrowserCompatibilityResolver, InitialDataResolver } from 'app/app.resolvers';
 
 // @formatter:off
 /* eslint-disable max-len */
@@ -59,6 +59,9 @@ export const appRoutes: Route[] = [
         component  : LayoutComponent,
         data: {
             layout: 'custom'
+        },
+        resolve    : {
+            browserCompatibility    : BrowserCompatibilityResolver,
         },
         children   : [
             {path: 'payment-redirect',loadChildren: () => import('app/modules/landing/payment-redirect/payment-redirect.module').then(m => m.PaymentRedirectModule)},

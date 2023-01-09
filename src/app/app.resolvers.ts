@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-import { forkJoin, Observable } from 'rxjs';
+import { forkJoin, Observable, of, switchMap } from 'rxjs';
 import { MessagesService } from 'app/layout/common/messages/messages.service';
 import { NavigationService } from 'app/core/navigation/navigation.service';
 import { NotificationsService } from 'app/layout/common/notifications/notifications.service';
@@ -45,5 +45,41 @@ export class InitialDataResolver implements Resolve<any>
             this._quickChatService.getChats(),
             this._shortcutsService.getAll()
         ]);
+    }
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+export class BrowserCompatibilityResolver implements Resolve<any>
+{
+    noscript: HTMLLinkElement = document.querySelector('#noscript');
+
+    /**
+     * Constructor
+     */
+    constructor(
+    )
+    {
+    }
+
+    // -----------------------------------------------------------------------------------------------------
+    // @ Public methods
+    // -----------------------------------------------------------------------------------------------------
+
+    /**
+     * Use this resolver to resolve initial mock-api for the application
+     *
+     * @param route
+     * @param state
+     */
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>
+    {        
+        return of(true).pipe(
+            switchMap(async (response: any) => {
+                this.noscript.innerText = "";
+                this.noscript.style.display = "none";
+            })
+        );
     }
 }
