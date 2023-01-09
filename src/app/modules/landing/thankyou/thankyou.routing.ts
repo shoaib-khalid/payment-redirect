@@ -3,7 +3,7 @@ import { ThankYouComponent } from 'app/modules/landing/thankyou/thankyou.compone
 
 export const thankyouRoutes: Route[] = [
     {
-        path     : ':status/:paymentType/:completionStatus/:channel',
+        path     : ':status/:paymentType/:completionStatus/:serviceType',
         component: ThankYouComponent
     },
     {

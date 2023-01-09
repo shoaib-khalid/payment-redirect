@@ -57,14 +57,14 @@
             <div class="flex flex-col items-center px-10 mb-6 w-full text-white">
                 <!-- deliverin -->
                 <img
-                    *ngIf="this.params.channel === 'DELIVERIN'"
+                    *ngIf="this.params.serviceType === 'DELIVERIN'"
                     (click)="redirectToDeliverIn()"
                     class="w-50"
                     [src]="'assets/branding/logo/DeliverIN-Original.png'"
                     alt="Logo image">
                 <!-- dinein -->
                 <img
-                    *ngIf="this.params.channel === 'DINEIN'"
+                    *ngIf="this.params.serviceType === 'DINEIN'"
                     (click)="redirectToDineIn()"
                     class="w-50"
                     [src]="'assets/branding/logo/dinein-logo.png'"
@@ -125,7 +125,7 @@
                 </svg>
             </div>
             <span class="text-2xl font-medium text-center">Your payment is accepted.</span>
-            <ng-container *ngIf="this.params.channel === 'DINEIN'">
+            <ng-container *ngIf="this.params.serviceType === 'DINEIN'">
                 <span class="text-center text-gray-500">Please click continue button below if you are not redirected in 
                     <!-- Redirect countdown -->
                     <ng-container *ngIf="countdown > 0">
@@ -135,7 +135,7 @@
             </ng-container>
                 
             <button
-                *ngIf="this.params.channel === 'DINEIN'"
+                *ngIf="this.params.serviceType === 'DINEIN'"
                 mat-flat-button
                 (click)="redirectToDineIn()"
                 class="text-white mt-4"
@@ -147,7 +147,7 @@
             </button>
 
             <button
-                *ngIf="this.params.channel === 'DELIVERIN'"
+                *ngIf="this.params.serviceType === 'DELIVERIN'"
                 mat-flat-button
                 (click)="redirectToDeliverIn()"
                 class="text-white mt-4 rounded-lg"
@@ -167,14 +167,14 @@
             <div class="flex flex-col items-center px-10 mb-6 w-full text-white">
                 <!-- deliverin -->
                 <img
-                    *ngIf="this.params.channel === 'DELIVERIN'"
+                    *ngIf="this.params.serviceType === 'DELIVERIN'"
                     (click)="redirectToDeliverIn()"
                     class="w-50"
                     [src]="'assets/branding/logo/DeliverIN-Original.png'"
                     alt="Logo image">
                 <!-- dinein -->
                 <img
-                    *ngIf="this.params.channel === 'DINEIN'"
+                    *ngIf="this.params.serviceType === 'DINEIN'"
                     (click)="redirectToDineIn()"
                     class="w-50"
                     [src]="'assets/branding/logo/dinein-logo.png'"
@@ -236,7 +236,7 @@
             <span class="text-2xl font-medium text-center">Payment Failed</span>
             <span class="text-center text-gray-500">An error occurred while proccessing your payment 
                 <!-- Redirect countdown -->
-                <ng-container *ngIf="this.params.channel === 'DINEIN'">
+                <ng-container *ngIf="this.params.serviceType === 'DINEIN'">
                     <span class="text-center text-gray-500">Please click continue button below if you are not redirected in 
                         <!-- Redirect countdown -->
                         <ng-container *ngIf="countdown > 0">
@@ -247,7 +247,7 @@
             </span>
                 
             <button
-                *ngIf="this.params.channel === 'DINEIN'"
+                *ngIf="this.params.serviceType === 'DINEIN'"
                 mat-flat-button
                 (click)="redirectToDineIn()"
                 class="text-white mt-4"
@@ -259,7 +259,7 @@
             </button>
 
             <button
-                *ngIf="this.params.channel === 'DELIVERIN'"
+                *ngIf="this.params.serviceType === 'DELIVERIN'"
                 mat-flat-button
                 (click)="redirectToDeliverIn()"
                 class="text-white mt-4 rounded-lg"

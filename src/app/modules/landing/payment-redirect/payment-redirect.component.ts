@@ -75,9 +75,9 @@ export class PaymentRedirectComponent
                         .subscribe((response)=>{                                                        
                             if (response) {
                                 let paymentType = "ONLINEPAYMENT";//response.paymentType;
-                                this._router.navigate(['/thankyou/' + status + '/' + paymentType + '/' + this.payment.msg + '/' + response.channel ]);
+                                this._router.navigate(['/thankyou/' + status + '/' + paymentType + '/' + this.payment.msg + '/' + response.serviceType ]);
                             } else {
-                                this._router.navigate(['/thankyou/FAILED/UNKNOWN/ORDER_NOT_FOUND' + response.channel]);
+                                this._router.navigate(['/thankyou/FAILED/UNKNOWN/ORDER_NOT_FOUND' + response.serviceType]);
                             }
                         });
                 } else {

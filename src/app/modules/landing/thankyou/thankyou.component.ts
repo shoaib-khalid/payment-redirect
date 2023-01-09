@@ -18,7 +18,7 @@ export class ThankYouComponent
         'other': '# seconds'
     };
     params : {
-        channel         : string;
+        serviceType     : string;
         completionStatus: string;
         paymentType     : string;
         status          : string;
@@ -53,7 +53,7 @@ export class ThankYouComponent
             .pipe(
                 finalize(() => {
                     
-                    if (this.params.channel === 'DINEIN')
+                    if (this.params.serviceType === 'DINEIN')
                     {
                         this._document.location.href = 'https://' + this._apiServer.settings.dineInDomain + '/order-history';
                     }
