@@ -12,7 +12,7 @@ import { AppConfig } from "app/config/service.config";
 export class ThankYouComponent
 {
 
-    countdown       : number = 10;
+    countdown       : number = 5;
     countdownMapping: any = {
         '=1'   : '# second',
         'other': '# seconds'
@@ -56,6 +56,10 @@ export class ThankYouComponent
                     if (this.params.serviceType === 'DINEIN')
                     {
                         this._document.location.href = 'https://' + this._apiServer.settings.dineInDomain + '/order-history';
+                    }
+                    else if (this.params.serviceType === 'DELIVERIN')
+                    {
+                        this._document.location.href = 'https://' + this._apiServer.settings.marketplaceDomain;
                     }
                 }),
                 takeWhile(() => this.countdown > 0),

@@ -125,8 +125,8 @@
                 </svg>
             </div>
             <span class="text-2xl font-medium text-center">Your payment is accepted.</span>
-            <ng-container *ngIf="this.params.serviceType === 'DINEIN'">
-                <span class="text-center text-gray-500">Please click continue button below if you are not redirected in 
+            <ng-container>
+                <span class="text-center text-gray-500">Please click the button below if you are not redirected in 
                     <!-- Redirect countdown -->
                     <ng-container *ngIf="countdown > 0">
                         <a>{{countdown | i18nPlural: countdownMapping }}...</a>

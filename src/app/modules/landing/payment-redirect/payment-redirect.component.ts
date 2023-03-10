@@ -62,7 +62,7 @@ export class PaymentRedirectComponent
                 this.payment.transaction_id = params['basket_id'];
             }
 
-            let status;
+            let status = '';
             if (this.payment.status_id == "1" || this.payment.status_id == 1) {
                 status = "SUCCESS"
             } else {
