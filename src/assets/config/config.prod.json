@@ -3,8 +3,8 @@
         "name": "prod" 
     },
     "apiServer": {
-        "productService"        : "https://api.symplified.it/product-service/v1",
-        "orderService"          : "https://api.symplified.it/order-service/v1"
+        "productService"        : "https://api.symplified.biz/product-service/v1",
+        "orderService"          : "https://api.symplified.biz/order-service/v1"
     },
     "marketplaceDomain"         : "deliverin.my",
     "dineInDomain"              : "qr.dinein.my",
